@@ -156,7 +156,7 @@ def select_gridpoint():
     grid_origin = [9,9]
     while np.sqrt(grid_origin[0]**2+grid_origin[1]**2) >= 2.75:
         # print("finding point - ", np.sqrt(grid_origin[0]**2+grid_origin[1]**2))
-        grid_origin = [random.uniform(min_x+0.5, max_x-1.2), random.uniform(min_y+0.5, max_y-1.2)]
+        grid_origin = [random.uniform(min_x+0.8, max_x-1.3), random.uniform(min_y+0.8, max_y-1.3)]
 
     return grid_origin
 
@@ -273,14 +273,14 @@ zeros_beyond_mesh = 0
 # rangle_save = np.load("rotation_angles.npy")
 
 #set number of starshape grids to use
-nSGrids = 500
+nSGrids = 2000
 # print("Number of available central grids: ", len(origin_save))
 # assert nSGrids <= nGrids, "Cannot make more starshape grids than number of central grids we have"
 # Ssnapshots_matrix = np.zeros((nx*ny*3, nSGrids*5))
 Ssnapshot_ae = np.zeros((nSGrids*2*5,nx,ny,3))
 
 for iGrid in range(nSGrids):
-    rand_t = random.randint(offset, nTime+offset)
+    rand_t = random.randint(offset, nTime+offset-1)
     print("Sampling at starshape grid ", iGrid+1, " out of ", nSGrids)
 
     # call saved values for grid origin and random angle
@@ -369,10 +369,10 @@ Ssnapshot_ae[:,:,:,2] = va_scaling*Ssnapshot_ae[:,:,:,2]
 # print("Scaled minimum = ", np.amin(Ssnapshot_ae[:,:,:,:2]))
 # print("Scaled maximum = ", np.amax(Ssnapshot_ae[:,:,:,:2]))
 
-np.save("training_set_1.npy",Ssnapshot_ae)
+np.save("training_set_8.npy",Ssnapshot_ae)
 
 
-textfile = open("training_set_1.txt", 'w')
+textfile = open("training_set_8.txt", 'w')
 textfile.write("min_vel = "+str(min_vel) +" , max_vel = "+ str(max_vel)+ " , vel_scaling = "+ str(vel_scaling))
 textfile.close()
 
