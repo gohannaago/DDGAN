@@ -39,7 +39,7 @@
 
 
   <p align="center">
-    ACSE-9 Independent Research Project
+    ACSE-9 Independent Research Project 2021
     <br /> 
     MSc Applied Computational Science and Engineering <br /> Imperial College London
     <br /> 
@@ -52,7 +52,7 @@
     <!-- <a href="https://github.com/github_username/repo_name/issues">Request Feature</a> -->
   </p>
   <p align="center">
-  <img src="report/overall_edit.png" alt="Logo" width="400" height="600">
+  <img src="diagram.png" alt="Logo" width="400" height="600">
   </p>
 </p>
 
@@ -76,8 +76,6 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -91,15 +89,11 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-This project is a non-intrusive reduced order modelling (NIROM) on flows around buildings. High-fidelity representations of flows are compressed and modelled. In particular, proper orthogonal decomposition (POD) and convolutional autoencoders (CAE) are compared as methods for reducing order of the data, and an predictive adversarial network (PAN)(made by Zef Wolffs) is used to predict the compressed flow representations. Domain decopmosition is applied to predict on a larger domain using subdomains. 
+This project is a non-intrusive reduced order modelling (NIROM) on flows around buildings. High-fidelity representations of flows are compressed and modelled. In particular, proper orthogonal decomposition (POD) and convolutional autoencoders (CAE) are compared as methods for reducing order of the data, and an predictive adversarial network (built by Zef Wolffs) is used to predict the compressed flow representations. Domain decopmosition is applied to predict on a larger domain using subdomains. 
 
 
 ### Built With
-This project is developed in Python. Packages scipy, numpy, matplotlib, sklearn, tensorflow, keras, vtu etc. used. 
-* []()
-* []()
-* []()
-
+This project is developed in Python. Packages scipy, numpy, matplotlib, sklearn, tensorflow, keras, vtu etc. were used (refer to requirements.txt). Training was done on Google Colab, utilizing Google's Compute Backend Engine GPU. 
 
 
 <!-- GETTING STARTED -->
@@ -107,78 +101,55 @@ This project is developed in Python. Packages scipy, numpy, matplotlib, sklearn,
 
 To get a local copy up and running follow these simple steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
+### Installation of Convolutional Autoencoder (CAE) 
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/gohannaago/DDGAN.git
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-
+2. Change directory to where the package is in the repo
+    ```sh
+    cd ./compression
+    ```
+3. Install requirements
+    ```sh
+    pip install -r requirements.txt
+    ```
+4. Install package
+    ```sh
+    pip install -e .
+    ```
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usage Examples
+Jupyter Notebook with usage examples can be found in the examples folder. Please refer to the following notebooks in the folder.
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
+* [Compression Training Example](https://github.com/gohannaago/DDGAN/blob/main/compression/Compression_trainCAE.ipynb) (with CAE) 
+* Prediction Training Example (with Predictive Network)
+* Prediction on full domain
 
 
 <!-- LICENSE -->
 ## License
-
 Distributed under the MIT License. See `LICENSE` for more information.
-
 
 
 <!-- CONTACT -->
 ## Contact
+Please contact to the following email when access for the project results is demanded. 
 
-Hanna Go - hg2917@ic.ac.uk / hannago2917@gmail.com
-
+Hanna Go - hanna.go17@imperial.ac.uk / hannago2917@gmail.com
 Project Link: [https://github.com/acse-hg2917/DDGAN_buildings](https://github.com/acse-hg2917/DDGAN_buildings)
 
 
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-I would like to thank my supervisors Dr.Claire Heaney and Prof.Christopher Pain for giving the opportunity to investigate this topic and providing great guidance. I would also like to thank our DD-GAN group, especially Xiangqi Liu for working together on how to approach the buildings project and Zef Wolffs and Jon Tomasson for providing the WGAN and PAN constructions. 
+I would like to thank my supervisors Dr.Claire Heaney and Prof.Christopher Pain for giving the opportunity to investigate this topic and providing great guidance. I would also like to thank our DD-GAN group, especially Xiangqi Liu for working together on how to approach the buildings project and Zef Wolffs and Jon Tomasson for providing the WGAN and Predictive adversarial network constructions. 
 
-* [Zeff Wollfs (PAN)](https://github.com/acse-zrw20/DD-GAN-AE)
-* [Jon Tomasson (predictive WGAN)](https://github.com/acse-jat20/DD-GAN)
+* [Zeff Wollfs (Predictive Adversarial Network)](https://github.com/acse-zrw20/DD-GAN-AE)
+* [Jon Tomasson (Predictive WGAN)](https://github.com/acse-jat20/DD-GAN)
 * [Xiangqi Liu]()
 
 
